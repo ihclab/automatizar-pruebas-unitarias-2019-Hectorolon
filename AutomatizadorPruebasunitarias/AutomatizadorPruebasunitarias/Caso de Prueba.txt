@@ -6,10 +6,10 @@
 0006:mediaGeometrica:1 2 4 8 16 32:6.6569
 0007:mediaGeometrica:0:0.0000
 0008:mediaGeometrica:2 4 8:4.0000
-0009:mediaGeometrica:0 0 0 0:Exception
+0009:mediaGeometrica:0 0 0 0:0.0000
 0010:mediaGeometrica:NULL:0.0000
-0011:mediaArmonica:2 4 8:3.4286
+0011:mediaArmonica:2 4 8:3.4285
 0012:mediaArmonica:2 3 6:3.0000
 0013:mediaArmonica:1 3 5 9 12:2.8939
-0014:mediaArmonica:2 3 6:3.0000
+0014:mediaArmonica:2 4 6 8:3.8400
 0015:mediaArmonica:NULL:0.0000

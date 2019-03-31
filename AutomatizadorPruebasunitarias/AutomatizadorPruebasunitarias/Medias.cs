@@ -10,20 +10,20 @@ namespace AutomatizadorPruebasunitarias
     {
         public static double mediaAritmetica(params int[] vals)
         {
-            int valores = 0;
+            double valores = 0;
             for (int i = 0; i < vals.Length; i++)
             {
                 valores += vals[i];
             }
             return valores / vals.Length;
         }
-        
+
         private static double raizEnesima(double x, int n)
         {
             return Math.Pow(x, 1 / n);
         }
         
-        public double mediaGeometrica(params int[] vals)
+        public static double mediaGeometrica(params int[] vals)
         {
             int valores = 1;
             for (int i = 0; i < vals.Length; i++)
@@ -38,7 +38,7 @@ namespace AutomatizadorPruebasunitarias
             double valores = 0;
             for (int i = 0; i < vals.Length; i++)
             {
-                valores += 1 / vals[i];
+                valores += 1 / (Convert.ToDouble(vals[i]));
             }
             return vals.Length / valores;
         }
