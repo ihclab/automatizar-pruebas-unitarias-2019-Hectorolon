@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -13,15 +14,17 @@ namespace AutomatizadorPruebasunitarias
         {
 
             Medias medias = new Medias();
-
+            Stopwatch sw = new Stopwatch();
             try
             {
                 using (StreamReader sr = new StreamReader("../../Caso de Prueba.txt"))
                 {
                     string linea;
-
                     while ((linea = sr.ReadLine()) != null)
                     {
+                        //sw.Reset();
+                        sw.Start();
+                        //sw.Restart();
                         string[] separados = linea.Split(':');
                         string[] var = separados[2].Split(' ');
                         double resultado;
@@ -46,10 +49,16 @@ namespace AutomatizadorPruebasunitarias
                                     resultado = (Math.Truncate(resultado * 1) / 1);
                                     if (resultado == resultadoViejo)
                                     {
-                                        Console.WriteLine(separados[0] + " Exito", Console.ForegroundColor = ConsoleColor.Green);
+                                        sw.Stop();
+                                        Console.WriteLine(separados[0] + " Exito " + "T.E. " + sw.ElapsedMilliseconds, Console.ForegroundColor = ConsoleColor.Green);
+                                        sw.Restart();
                                     }
                                     else
-                                        Console.WriteLine(separados[0] + " Fallo", Console.ForegroundColor = ConsoleColor.Red);
+                                    {
+                                        sw.Stop();
+                                        Console.WriteLine(separados[0] + " Fallo " + "T.E. " + sw.ElapsedMilliseconds, Console.ForegroundColor = ConsoleColor.Red);
+                                        sw.Restart();
+                                    }
                                     break;
 
                                 case "mediaGeometrica":
@@ -58,10 +67,16 @@ namespace AutomatizadorPruebasunitarias
                                     resultado = (Math.Truncate(resultado * 1) / 1);
                                     if (resultado == resultadoViejo)
                                     {
-                                        Console.WriteLine(separados[0] + ": Exito", Console.ForegroundColor = ConsoleColor.Green);
+                                        sw.Stop();
+                                        Console.WriteLine(separados[0] + ": Exito " + "T.E. " + sw.ElapsedMilliseconds, Console.ForegroundColor = ConsoleColor.Green);
+                                        sw.Restart();
                                     }
                                     else
-                                        Console.WriteLine(separados[0] + ": Fallo", Console.ForegroundColor = ConsoleColor.Red);
+                                    {
+                                        sw.Stop();
+                                        Console.WriteLine(separados[0] + ": Fallo " + "T.E. " + sw.ElapsedMilliseconds, Console.ForegroundColor = ConsoleColor.Red);
+                                        sw.Restart();
+                                    }
                                     break;
 
                                 case "mediaArmonica":
@@ -70,10 +85,16 @@ namespace AutomatizadorPruebasunitarias
                                     resultado = (Math.Truncate(resultado * 1) / 1);
                                     if (resultado == resultadoViejo)
                                     {
-                                        Console.WriteLine(separados[0] + ": Exito", Console.ForegroundColor = ConsoleColor.Green);
+                                        sw.Stop();
+                                        Console.WriteLine(separados[0] + ": Exito " + "T.E. " + sw.ElapsedMilliseconds, Console.ForegroundColor = ConsoleColor.Green);
+                                        sw.Restart();
                                     }
                                     else
-                                        Console.WriteLine(separados[0] + ": Fallo", Console.ForegroundColor = ConsoleColor.Red);
+                                    {
+                                        sw.Stop();
+                                        Console.WriteLine(separados[0] + ": Fallo " + "T.E. " + sw.ElapsedMilliseconds, Console.ForegroundColor = ConsoleColor.Red);
+                                        sw.Restart();
+                                    }
                                     break;
 
                             }
