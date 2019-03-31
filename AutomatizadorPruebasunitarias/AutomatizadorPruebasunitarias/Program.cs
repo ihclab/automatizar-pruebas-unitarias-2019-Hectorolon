@@ -16,7 +16,7 @@ namespace AutomatizadorPruebasunitarias
 
             try
             {
-                using (StreamReader sr = new StreamReader("../../Problema 01.txt"))
+                using (StreamReader sr = new StreamReader("../../Caso de Prueba.txt"))
                 {
                     string linea;
 
@@ -38,45 +38,45 @@ namespace AutomatizadorPruebasunitarias
                         catch (Exception e)
                         {
                         }
-                        switch (separados[1])
-                        {
-                            case "mediaAritmetica":
-                                resultado = Medias.mediaAritmetica(parametros);
-                                resultado *= 10000;
-                                resultado = (Math.Truncate(resultado * 1) / 1);
-                                if (resultado == resultadoViejo)
-                                {
-                                    Console.WriteLine(separados[0] + " Exito");
-                                }
-                                else
-                                    Console.WriteLine(separados[0] + " Fallo");
-                                break;
+                            switch (separados[1])
+                            {
+                                case "mediaAritmetica":
+                                    resultado = Medias.mediaAritmetica(parametros);
+                                    resultado *= 10000;
+                                    resultado = (Math.Truncate(resultado * 1) / 1);
+                                    if (resultado == resultadoViejo)
+                                    {
+                                        Console.WriteLine(separados[0] + " Exito", Console.ForegroundColor = ConsoleColor.Green);
+                                    }
+                                    else
+                                        Console.WriteLine(separados[0] + " Fallo", Console.ForegroundColor = ConsoleColor.Red);
+                                    break;
 
-                            case "mediaGeometrica":
-                                resultado = Medias.mediaGeometrica(parametros);
-                                resultado *= 10000;
-                                resultado = (Math.Truncate(resultado * 1) / 1);
-                                if (resultado == resultadoViejo)
-                                {
-                                    Console.WriteLine(separados[0] + ": Exito");
-                                }
-                                else
-                                    Console.WriteLine(separados[0] + ": Fallo");
-                                break;
+                                case "mediaGeometrica":
+                                    resultado = Medias.mediaGeometrica(parametros);
+                                    resultado *= 10000;
+                                    resultado = (Math.Truncate(resultado * 1) / 1);
+                                    if (resultado == resultadoViejo)
+                                    {
+                                        Console.WriteLine(separados[0] + ": Exito", Console.ForegroundColor = ConsoleColor.Green);
+                                    }
+                                    else
+                                        Console.WriteLine(separados[0] + ": Fallo", Console.ForegroundColor = ConsoleColor.Red);
+                                    break;
 
-                            case "mediaArmonica":
-                                resultado = Medias.mediaArmonica(parametros);
-                                resultado *= 10000;
-                                resultado = (Math.Truncate(resultado * 1) / 1);
-                                if (resultado == resultadoViejo)
-                                {
-                                    Console.WriteLine(separados[0] + ": Exito");
-                                }
-                                else
-                                    Console.WriteLine(separados[0] + ": Fallo");
-                                break;
+                                case "mediaArmonica":
+                                    resultado = Medias.mediaArmonica(parametros);
+                                    resultado *= 10000;
+                                    resultado = (Math.Truncate(resultado * 1) / 1);
+                                    if (resultado == resultadoViejo)
+                                    {
+                                        Console.WriteLine(separados[0] + ": Exito", Console.ForegroundColor = ConsoleColor.Green);
+                                    }
+                                    else
+                                        Console.WriteLine(separados[0] + ": Fallo", Console.ForegroundColor = ConsoleColor.Red);
+                                    break;
 
-                        }
+                            }
                     }
                 }
             }
